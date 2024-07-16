@@ -8,9 +8,9 @@ namespace DesafioContratacao.Controllers
     {
         private readonly ICashFlowService _cashFlowService;
 
-        public CashFlowController()
+        public CashFlowController(ICashFlowService cashFlowService)
         {
-            _cashFlowService = new CashFlowService();
+            _cashFlowService = cashFlowService;
         }
 
         public IActionResult Index()
@@ -49,6 +49,11 @@ namespace DesafioContratacao.Controllers
             using (var workbook = new XLWorkbook())
             {
                 var worksheet = workbook.Worksheets.Add("Daily Report");
+
+                worksheet.Column(1).Width = 12; // Largura da coluna 1 (Data)
+                worksheet.Column(2).Width = 30; // Largura da coluna 2 (Produto)
+                worksheet.Column(3).Width = 15; // Largura da coluna 3 (Valor)
+                worksheet.Column(4).Width = 15; // Largura da coluna 4 (Tipo)
 
                 worksheet.Cell(1, 1).Value = "Data";
                 worksheet.Cell(1, 2).Value = "Produto";

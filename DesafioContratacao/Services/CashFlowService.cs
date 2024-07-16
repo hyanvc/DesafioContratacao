@@ -7,11 +7,13 @@ namespace DesafioContratacao.Services
     {
         private readonly JsonDatabase _database;
 
-        public CashFlowService()
+        // Constructor injection aplicando Dependency Inversion Principle
+        public CashFlowService(JsonDatabase database)
         {
-            _database = JsonDatabase.Instance;
+            _database = database;
         }
 
+        // Método para adicionar transação, responsabilidade única (Single Responsibility Principle)
         public void AddTransaction(Transaction transaction)
         {
             var cashFlow = GetCashFlow(transaction.Date);
@@ -19,11 +21,13 @@ namespace DesafioContratacao.Services
             _database.SaveCashFlow(cashFlow);
         }
 
+        // Método para obter fluxo de caixa por data
         public CashFlow GetCashFlow(DateTime date)
         {
             return _database.LoadCashFlow(date) ?? new CashFlow { Date = date };
         }
 
+        // Método para gerar relatório diário, responsabilidade única (Single Responsibility Principle)
         public Report GetDailyReport(DateTime date)
         {
             var cashFlow = GetCashFlow(date);
@@ -35,6 +39,4 @@ namespace DesafioContratacao.Services
             };
         }
     }
-
-
 }

@@ -6,13 +6,7 @@ namespace DesafioContratacao.Data
 {
     public sealed class JsonDatabase
     {
-        private static readonly Lazy<JsonDatabase> lazy = new Lazy<JsonDatabase>(() => new JsonDatabase());
-
-        public static JsonDatabase Instance { get { return lazy.Value; } }
-
-        private JsonDatabase() { }
-
-        private string GetFilePath(DateTime date)
+        public string GetFilePath(DateTime date)
         {
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"CashFlow_{date:yyyyMMdd}.json");
         }
