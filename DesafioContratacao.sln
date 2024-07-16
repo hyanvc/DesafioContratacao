@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioContratacao", "DesafioContratacao\DesafioContratacao.csproj", "{DA1E9050-365F-4D44-8D42-A185C6951E51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioContratacaoTEST", "DesafioContratacaoTEST\DesafioContratacaoTEST.csproj", "{7FCB8943-0C70-4EBD-9B9D-6B71F47D7CBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DA1E9050-365F-4D44-8D42-A185C6951E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA1E9050-365F-4D44-8D42-A185C6951E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA1E9050-365F-4D44-8D42-A185C6951E51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FCB8943-0C70-4EBD-9B9D-6B71F47D7CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FCB8943-0C70-4EBD-9B9D-6B71F47D7CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FCB8943-0C70-4EBD-9B9D-6B71F47D7CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FCB8943-0C70-4EBD-9B9D-6B71F47D7CBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
