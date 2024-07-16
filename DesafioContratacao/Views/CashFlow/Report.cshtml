@@ -1,0 +1,34 @@
+﻿@model Report
+
+@{
+    ViewData["Title"] = "Relatório do Fluxo Diário";
+}
+
+<h1>Daily Report for @Model.Date.ToString("dd-MM-yyyy")</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Nome Do Produto</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model.Transactions)
+        {
+            var formattedAmount = (transaction.Type == TransactionType.Credit ? "+ " : "- ") + transaction.Amount.ToString("C");
+            <tr>
+                <td>@transaction.Date.ToString("yyyy-MM-dd")</td>
+                <td>@transaction.ProductName</td>
+                <td>@formattedAmount</td>
+                <td>@transaction.Type</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>Resumo do Dia: @Model.Balance.ToString("C")</p>
+
+<a href="/CashFlow/DownloadReport?date=@Model.Date.ToString("yyyy-MM-dd")" class="btn btn-primary">Baixar Relatorio</a>
